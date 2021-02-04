@@ -1,0 +1,38 @@
+#N canvas -8 -8 1920 997 12;
+#X obj 28 277 wah_pedal, f 46;
+#X obj 230 158 hsl 128 15 0 1 0 1 empty drySlider dry -2 -8 0 10 -260909
+-1 -1 5500 1;
+#X obj 270 195 hsl 128 15 0 1 0 1 empty wetSlider wet -2 -8 0 10 -184253
+-1 -1 12700 1;
+#X obj 310 230 hsl 128 15 0 1 0 1 empty panSlider pan -2 -8 0 10 -262113
+-1 -1 6000 1;
+#X obj 190 122 hsl 128 15 0 1 0 1 empty dampingSlider resonance -2
+-8 0 10 -143338 -1 -1 12700 1;
+#X obj 150 82 hsl 128 15 0 1 0 1 empty /roomsizeSlider center_frequency
+-2 -8 0 10 -232126 -1 -1 8200 1;
+#X obj 28 66 tgl 15 1 empty onOffToggle bypass 17 7 0 10 -262144 -1
+-1 0 1;
+#X obj 94 246 ezdac~;
+#X obj 94 18 tgl 30 0 empty onOffToggle patch_audio_on/off 40 7 0 10
+-262144 -1 -1 1 1;
+#X obj 370 267 hsl 240 30 0 1 0 1 empty gainSlider gain -2 -8 0 10
+-224695 -33289 -33289 23900 1;
+#X obj 351 367 hsl 240 30 0 1 0 1 empty gainSlider gain -2 -8 0 10
+-224695 -33289 -33289 23900 1;
+#X obj 28 350 ezadc~;
+#X obj 552 38 loadbang;
+#X msg 552 72 \; pd dsp 1;
+#X connect 0 0 11 0;
+#X connect 0 1 11 1;
+#X connect 1 0 0 5;
+#X connect 2 0 0 6;
+#X connect 3 0 0 7;
+#X connect 4 0 0 4;
+#X connect 5 0 0 3;
+#X connect 6 0 0 0;
+#X connect 7 0 0 1;
+#X connect 7 1 0 2;
+#X connect 8 0 7 0;
+#X connect 9 0 0 8;
+#X connect 10 0 11 2;
+#X connect 12 0 13 0;

@@ -1,0 +1,67 @@
+#N canvas -1928 -8 1920 997 12;
+#X obj 353 5 loadbang;
+#X msg 353 39 \; pd dsp 1;
+#X obj 237 379 hsl 128 15 0 1 0 1 empty dampingSlider level -2 -8 0
+10 -143338 -1 -1 0 1;
+#X obj 186 345 hsl 128 15 40 1000 0 1 empty /roomsizeSlider gain -2
+-8 0 10 -232126 -1 -1 0 1;
+#X obj 288 412 hsl 128 15 0 1 0 1 empty panSlider pan -2 -8 0 10 -262113
+-1 -1 0 1;
+#X obj 31 330 tgl 15 1 empty onOffToggle bypass 17 7 0 10 -262144 -1
+-1 0 1;
+#X obj 358 449 hsl 240 30 0 1 0 1 empty gainSlider gain -2 -8 0 10
+-224695 -33289 -33289 0 1;
+#X obj 31 458 distortion_pedal, f 44;
+#X obj 23 15 receive fromGUI;
+#X obj 23 37 list trim;
+#X obj 23 58 route /distortionBypassToggle;
+#X obj 312 149 receive fromGUI;
+#X obj 312 171 list trim;
+#X obj 312 193 route /distortionGainSlider;
+#X obj 388 217 receive fromGUI;
+#X obj 388 239 list trim;
+#X obj 388 261 route /distortionLevelSlider;
+#X obj 442 285 receive fromGUI;
+#X obj 442 306 list trim;
+#X obj 442 328 route /distortionPanSlider;
+#X obj 519 353 receive fromGUI;
+#X obj 519 375 list trim;
+#X obj 519 423 * 5;
+#X obj 518 396 route /distortionOutputGainSlider;
+#X obj 32 558 dac~;
+#X obj 87 164 tgl 15 0 empty onOffToggle patch_audio_on/off 17 7 0
+10 -262144 -1 -1 0 1;
+#X obj 87 348 ezdac~;
+#X obj 106 86 receive fromGUI;
+#X obj 106 108 list trim;
+#X obj 106 129 route /distortionOnOffToggle;
+#X connect 0 0 1 0;
+#X connect 2 0 7 4;
+#X connect 3 0 7 3;
+#X connect 4 0 7 5;
+#X connect 5 0 7 0;
+#X connect 6 0 7 6;
+#X connect 7 0 24 0;
+#X connect 7 1 24 1;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 7 0;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 13 0 7 3;
+#X connect 14 0 15 0;
+#X connect 15 0 16 0;
+#X connect 16 0 7 4;
+#X connect 17 0 18 0;
+#X connect 18 0 19 0;
+#X connect 19 0 7 5;
+#X connect 20 0 21 0;
+#X connect 21 0 23 0;
+#X connect 22 0 7 6;
+#X connect 23 0 22 0;
+#X connect 25 0 26 0;
+#X connect 26 0 7 1;
+#X connect 26 1 7 2;
+#X connect 27 0 28 0;
+#X connect 28 0 29 0;
+#X connect 29 0 26 0;

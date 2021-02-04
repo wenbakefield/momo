@@ -1,0 +1,87 @@
+#N canvas -1928 -8 1920 997 12;
+#X obj 69 525 wah_pedal, f 46;
+#X obj 299 414 hsl 128 15 0 1 0 1 empty drySlider dry -2 -8 0 10 -260909
+-1 -1 0 1;
+#X obj 345 451 hsl 128 15 0 1 0 1 empty wetSlider wet -2 -8 0 10 -184253
+-1 -1 0 1;
+#X obj 391 488 hsl 128 15 0 1 0 1 empty panSlider pan -2 -8 0 10 -262113
+-1 -1 0 1;
+#X obj 254 378 hsl 128 15 0 1 0 1 empty dampingSlider resonance -2
+-8 0 10 -143338 -1 -1 0 1;
+#X obj 208 337 hsl 128 15 0 1 0 1 empty /roomsizeSlider center_frequency
+-2 -8 0 10 -232126 -1 -1 0 1;
+#X obj 69 266 tgl 15 0 empty onOffToggle bypass 17 7 0 10 -262144 -1
+-1 0 1;
+#X obj 114 486 ezdac~;
+#X obj 114 292 tgl 15 0 empty onOffToggle patch_audio_on/off 17 7 0
+10 -262144 -1 -1 0 1;
+#X obj 574 576 hsl 240 30 0 10 0 1 empty gainSlider gain -2 -8 0 10
+-224695 -33289 -33289 0 1;
+#X obj 585 48 loadbang;
+#X msg 585 82 \; pd dsp 1;
+#X obj 204 96 receive fromGUI;
+#X obj 204 118 list trim;
+#X obj 418 245 receive fromGUI;
+#X obj 418 267 list trim;
+#X obj 489 311 receive fromGUI;
+#X obj 489 333 list trim;
+#X obj 570 377 receive fromGUI;
+#X obj 764 402 receive fromGUI;
+#X obj 679 505 receive fromGUI;
+#X obj 679 527 list trim;
+#X obj 204 139 route /wahOnOffToggle;
+#X obj 489 354 route /wahDrySlider;
+#X obj 570 399 list trim;
+#X obj 764 423 list trim;
+#X obj 570 420 route /wahWetSlider;
+#X obj 764 445 route /wahPanSlider;
+#X obj 418 288 route /wahResonanceSlider;
+#X obj 304 162 receive fromSystem;
+#X obj 304 228 unpack 0 0;
+#X obj 304 184 route list;
+#X floatatom 309 256 5 0 0 0 - - -;
+#X obj 304 205 route /tilts;
+#X obj 32 71 receive fromGUI;
+#X obj 32 93 list trim;
+#X obj 32 114 route /wahBypassToggle;
+#X obj 679 548 route /wahOutputGainSlider;
+#X obj 70 581 dac~;
+#X connect 0 0 38 0;
+#X connect 0 1 38 1;
+#X connect 1 0 0 5;
+#X connect 2 0 0 6;
+#X connect 3 0 0 7;
+#X connect 4 0 0 4;
+#X connect 5 0 0 3;
+#X connect 6 0 0 0;
+#X connect 7 0 0 1;
+#X connect 7 1 0 2;
+#X connect 8 0 7 0;
+#X connect 9 0 0 8;
+#X connect 10 0 11 0;
+#X connect 12 0 13 0;
+#X connect 13 0 22 0;
+#X connect 14 0 15 0;
+#X connect 15 0 28 0;
+#X connect 16 0 17 0;
+#X connect 17 0 23 0;
+#X connect 18 0 24 0;
+#X connect 19 0 25 0;
+#X connect 20 0 21 0;
+#X connect 21 0 37 0;
+#X connect 22 0 7 0;
+#X connect 23 0 0 5;
+#X connect 24 0 26 0;
+#X connect 25 0 27 0;
+#X connect 26 0 0 6;
+#X connect 27 0 0 7;
+#X connect 28 0 0 4;
+#X connect 29 0 31 0;
+#X connect 30 0 32 0;
+#X connect 30 0 0 3;
+#X connect 31 0 33 0;
+#X connect 33 0 30 0;
+#X connect 34 0 35 0;
+#X connect 35 0 36 0;
+#X connect 36 0 0 0;
+#X connect 37 0 0 8;

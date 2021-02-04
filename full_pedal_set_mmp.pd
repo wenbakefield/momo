@@ -1,0 +1,367 @@
+#N canvas -1928 -8 1920 997 12;
+#X declare -path ./chorus;
+#X declare -path ./delay;
+#X declare -path ./distortion;
+#X declare -path ./reverb;
+#X declare -path ./wah;
+#X declare -path ./_utils;
+#X obj 125 2363 hsl 128 15 0 1 0 1 empty /roomsizeSlider roomsize -2
+-8 0 10 -232126 -1 -1 6500 1;
+#X obj 161 2399 hsl 128 15 0 2 0 1 empty dampingSlider damping -2 -8
+0 10 -143338 -1 -1 7100 1;
+#X obj 196 2433 hsl 128 15 0 1 0 1 empty drySlider dry -2 -8 0 10 -260909
+-1 -1 6500 1;
+#X obj 232 2469 hsl 128 15 0 1 0 1 empty wetSlider wet -2 -8 0 10 -184253
+-1 -1 11000 1;
+#X obj 267 2505 hsl 128 15 0 1 0 1 empty panSlider pan -2 -8 0 10 -262113
+-1 -1 6300 1;
+#X obj 16 2349 tgl 15 1 empty onOffToggle bypass 17 7 0 10 -262144
+-1 -1 0 1;
+#X obj 315 2651 hsl 240 30 0 1 0 1 empty gainSlider gain -2 -8 0 10
+-224695 -33289 -33289 23900 1;
+#X obj 16 2556 reverb_pedal, f 41;
+#X obj 232 1748 hsl 128 15 0 1 0 1 empty drySlider dry -2 -8 0 10 -260909
+-1 -1 8000 1;
+#X obj 266 1778 hsl 128 15 0 1 0 1 empty wetSlider wet -2 -8 0 10 -184253
+-1 -1 9000 1;
+#X obj 164 1682 hsl 128 15 0 1 0 1 empty dampingSlider intensity -2
+-8 0 10 -143338 -1 -1 7000 1;
+#X obj 130 1646 hsl 128 15 0 1 0 1 empty /roomsizeSlider delay_time
+-2 -8 0 10 -232126 -1 -1 3300 1;
+#X obj 300 1811 hsl 128 15 0 1 0 1 empty panSlider pan -2 -8 0 10 -262113
+-1 -1 5500 1;
+#X obj 198 1714 hsl 128 15 0 1 0 1 empty dampingSlider cutoff_frequency
+-2 -8 0 10 -261020 -1 -1 4800 1;
+#X obj 26 1631 tgl 15 1 empty onOffToggle bypass 17 7 0 10 -262144
+-1 -1 0 1;
+#X obj 990 -31 loadbang;
+#X msg 990 3 \; pd dsp 1;
+#X obj 28 277 wah_pedal, f 67;
+#X obj 322 158 hsl 128 15 0 1 0 1 empty drySlider dry -2 -8 0 10 -260909
+-1 -1 200 1;
+#X obj 380 197 hsl 128 15 0 1 0 1 empty wetSlider wet -2 -8 0 10 -184253
+-1 -1 11200 1;
+#X obj 438 230 hsl 128 15 0 1 0 1 empty panSlider pan -2 -8 0 10 -262113
+-1 -1 5100 1;
+#X obj 264 121 hsl 128 15 0 1 0 1 empty dampingSlider resonance -2
+-8 0 10 -143338 -1 -1 6200 1;
+#X obj 202 82 hsl 128 15 -1 1 0 1 empty /roomsizeSlider center_frequency
+-2 -8 0 10 -232126 -1 -1 4800 1;
+#X obj 28 66 tgl 15 1 empty onOffToggle bypass 17 7 0 10 -262144 -1
+-1 0 1;
+#X obj 94 18 tgl 30 0 empty onOffToggle patch_audio_on/off 40 7 0 10
+-262144 -1 -1 0 1;
+#X obj 234 669 hsl 128 15 0 1 0 1 empty dampingSlider level -2 -8 0
+10 -143338 -1 -1 9500 1;
+#X obj 183 635 hsl 128 15 40 1000 0 1 empty /roomsizeSlider gain -2
+-8 0 10 -232126 -1 -1 9200 1;
+#X obj 285 702 hsl 128 15 0 1 0 1 empty panSlider pan -2 -8 0 10 -262113
+-1 -1 6700 1;
+#X obj 28 620 tgl 15 1 empty onOffToggle bypass 17 7 0 10 -262144 -1
+-1 0 1;
+#X obj 237 1153 hsl 128 15 0 1 0 1 empty dampingSlider depth -2 -8
+0 10 -143338 -1 -1 9700 1;
+#X obj 186 1113 hsl 128 15 40 1000 0 1 empty /roomsizeSlider speed
+-2 -8 0 10 -232126 -1 -1 2900 1;
+#X obj 288 1187 hsl 128 15 0 1 0 1 empty panSlider pan -2 -8 0 10 -262113
+-1 -1 5800 1;
+#X obj 31 1098 tgl 15 1 empty onOffToggle bypass 17 7 0 10 -262144
+-1 -1 0 1;
+#X obj 515 267 hsl 240 30 0 1 0 1 empty gainSlider gain -2 -8 0 10
+-224695 -33289 -33289 16800 1;
+#X obj 355 739 hsl 240 30 0 1 0 1 empty gainSlider gain -2 -8 0 10
+-224695 -33289 -33289 23900 1;
+#X obj 28 748 distortion_pedal, f 44;
+#X obj 31 1235 chorus_pedal, f 44;
+#X obj 356 1225 hsl 240 30 0 1 0 1 empty gainSlider gain -2 -8 0 10
+-224695 -33289 -33289 14400 1;
+#X obj 356 1850 hsl 240 30 0 1 0 1 empty gainSlider gain -2 -8 0 10
+-224695 -33289 -33289 23900 1;
+#X obj 26 1860 delay_pedal, f 44;
+#X obj 332 2545 hsl 240 30 0 1 0 1 empty gainSlider gain -2 -8 0 10
+-224695 -33289 -33289 23900 1;
+#X obj 742 -24 receive fromGUI;
+#X obj 742 -2 list trim;
+#X obj 795 40 receive fromGUI;
+#X obj 795 62 list trim;
+#X obj 876 106 receive fromGUI;
+#X obj 949 173 receive fromGUI;
+#X obj 1003 236 receive fromGUI;
+#X obj 1003 258 list trim;
+#X obj 795 83 route /wahDrySlider;
+#X obj 876 128 list trim;
+#X obj 949 194 list trim;
+#X obj 876 150 route /wahWetSlider;
+#X obj 949 216 route /wahPanSlider;
+#X obj 742 19 route /wahResonanceSlider;
+#X obj 605 -34 receive fromSystem;
+#X obj 605 32 unpack 0 0;
+#X obj 605 -12 route list;
+#X floatatom 610 60 5 0 0 0 - - -;
+#X obj 605 9 route /tilts;
+#X obj 21 -49 receive fromGUI;
+#X obj 21 -27 list trim;
+#X obj 21 -6 route /wahBypassToggle;
+#X obj 326 -39 receive fromGUI;
+#X obj 326 -17 list trim;
+#X obj 326 4 route /audioOnOffToggle;
+#X obj 1003 279 route /wahOutputGainSlider;
+#X obj 20 305 receive fromGUI;
+#X obj 20 327 list trim;
+#X obj 20 348 route /distortionBypassToggle;
+#X obj 176 383 receive fromGUI;
+#X obj 176 405 list trim;
+#X obj 176 427 route /distortionGainSlider;
+#X obj 252 451 receive fromGUI;
+#X obj 252 473 list trim;
+#X obj 252 495 route /distortionLevelSlider;
+#X obj 306 519 receive fromGUI;
+#X obj 306 540 list trim;
+#X obj 306 562 route /distortionPanSlider;
+#X obj 383 587 receive fromGUI;
+#X obj 383 609 list trim;
+#X obj 383 657 * 5;
+#X obj 383 631 route /distortionOutputGainSlider;
+#X obj 27 795 receive fromGUI;
+#X obj 27 817 list trim;
+#X obj 27 838 route /chorusBypassToggle;
+#X obj 220 858 receive fromGUI;
+#X obj 220 880 list trim;
+#X obj 220 902 route /chorusSpeedSlider;
+#X obj 272 934 receive fromGUI;
+#X obj 272 956 list trim;
+#X obj 271 979 route /chorusDepthSlider;
+#X obj 368 1009 receive fromGUI;
+#X obj 368 1031 list trim;
+#X obj 368 1053 route /chorusPanSlider;
+#X obj 440 1099 receive fromGUI;
+#X obj 440 1121 list trim;
+#X obj 440 1143 route /chorusOutputGainSlider;
+#X obj 171 1356 receive fromGUI;
+#X obj 171 1378 list trim;
+#X obj 226 1432 receive fromGUI;
+#X obj 226 1454 list trim;
+#X obj 226 1475 route /delayIntensitySlider;
+#X obj 171 1399 route /delayTimeSlider;
+#X obj 308 1502 receive fromGUI;
+#X obj 308 1524 list trim;
+#X obj 308 1545 route /delayCutoffFreqSlider;
+#X obj 359 1568 receive fromGUI;
+#X obj 359 1590 list trim;
+#X obj 359 1611 route /delayDrySlider;
+#X obj 460 1636 receive fromGUI;
+#X obj 460 1658 list trim;
+#X obj 460 1679 route /delayWetSlider;
+#X obj 545 1710 receive fromGUI;
+#X obj 545 1732 list trim;
+#X obj 545 1753 route /delayPanSlider;
+#X obj 599 1779 receive fromGUI;
+#X obj 599 1801 list trim;
+#X obj 88 1288 receive fromGUI;
+#X obj 88 1310 list trim;
+#X obj 88 1331 route /delayBypassToggle;
+#X obj 599 1822 route /delayOutputGainSlider;
+#X obj 104 1985 receive fromGUI;
+#X obj 104 2007 list trim;
+#X obj 156 2053 receive fromGUI;
+#X obj 156 2075 list trim;
+#X obj 195 2123 receive fromGUI;
+#X obj 195 2145 list trim;
+#X obj 225 2192 receive fromGUI;
+#X obj 225 2214 list trim;
+#X obj 274 2260 receive fromGUI;
+#X obj 274 2282 list trim;
+#X obj 343 2331 receive fromGUI;
+#X obj 343 2353 list trim;
+#X obj 104 2028 route /reverbRoomsizeSlider;
+#X obj 155 2097 route /reverbDampingSlider;
+#X obj 195 2167 route /reverbDrySlider;
+#X obj 225 2235 route /reverbWetSlider;
+#X obj 274 2304 route /reverbPanSlider;
+#X obj 17 1916 receive fromGUI;
+#X obj 17 1938 list trim;
+#X obj 343 2375 route /reverbOutputGainSlider;
+#X obj 313 2580 receive fromGUI;
+#X obj 313 2602 list trim;
+#X obj 313 2623 route /finalOutputGainSlider;
+#X obj 17 1959 route /reverbBypassToggle;
+#X obj 133 122 ezadc~;
+#X obj 16 2633 ezdac~;
+#X obj 1193 209 declare -path ./chorus;
+#X obj 1193 231 declare -path ./delay;
+#X obj 1193 253 declare -path ./distortion;
+#X obj 1193 275 declare -path ./reverb;
+#X obj 1193 297 declare -path ./wah;
+#X obj 1193 187 declare -path ./_utils;
+#X obj 414 28 receive fromGUI;
+#X obj 414 50 list trim;
+#X obj 414 71 route /stereoOnOffToggle;
+#X obj 38 161 tgl 30 0 empty onOffToggle stereo_on/off 40 7 0 10 -262144
+-1 -1 0 1;
+#X obj 49 122 ezadc_mono~;
+#X obj 78 204 mono_stereo_switch~;
+#X floatatom 201 108 5 0 0 0 - - -;
+#X connect 0 0 7 3;
+#X connect 1 0 7 4;
+#X connect 2 0 7 5;
+#X connect 3 0 7 6;
+#X connect 4 0 7 7;
+#X connect 5 0 7 0;
+#X connect 6 0 147 2;
+#X connect 7 0 147 0;
+#X connect 7 1 147 1;
+#X connect 8 0 39 6;
+#X connect 9 0 39 7;
+#X connect 10 0 39 4;
+#X connect 11 0 39 3;
+#X connect 12 0 39 8;
+#X connect 13 0 39 5;
+#X connect 14 0 39 0;
+#X connect 15 0 16 0;
+#X connect 17 0 35 1;
+#X connect 17 1 35 2;
+#X connect 18 0 17 5;
+#X connect 19 0 17 6;
+#X connect 20 0 17 7;
+#X connect 21 0 17 4;
+#X connect 22 0 17 3;
+#X connect 22 0 160 0;
+#X connect 23 0 17 0;
+#X connect 24 0 146 0;
+#X connect 24 0 158 0;
+#X connect 25 0 35 4;
+#X connect 26 0 35 3;
+#X connect 27 0 35 5;
+#X connect 28 0 35 0;
+#X connect 29 0 36 4;
+#X connect 30 0 36 3;
+#X connect 31 0 36 5;
+#X connect 32 0 36 0;
+#X connect 33 0 17 8;
+#X connect 34 0 35 6;
+#X connect 35 0 36 1;
+#X connect 35 1 36 2;
+#X connect 36 0 39 1;
+#X connect 36 1 39 2;
+#X connect 37 0 36 6;
+#X connect 38 0 39 9;
+#X connect 39 0 7 1;
+#X connect 39 1 7 2;
+#X connect 40 0 7 8;
+#X connect 41 0 42 0;
+#X connect 42 0 54 0;
+#X connect 43 0 44 0;
+#X connect 44 0 49 0;
+#X connect 45 0 50 0;
+#X connect 46 0 51 0;
+#X connect 47 0 48 0;
+#X connect 48 0 66 0;
+#X connect 49 0 17 5;
+#X connect 50 0 52 0;
+#X connect 51 0 53 0;
+#X connect 52 0 17 6;
+#X connect 53 0 17 7;
+#X connect 54 0 17 4;
+#X connect 55 0 57 0;
+#X connect 56 0 58 0;
+#X connect 56 0 17 3;
+#X connect 57 0 59 0;
+#X connect 59 0 56 0;
+#X connect 60 0 61 0;
+#X connect 61 0 62 0;
+#X connect 62 0 17 0;
+#X connect 63 0 64 0;
+#X connect 64 0 65 0;
+#X connect 65 0 146 0;
+#X connect 65 0 158 0;
+#X connect 66 0 17 8;
+#X connect 67 0 68 0;
+#X connect 68 0 69 0;
+#X connect 69 0 35 0;
+#X connect 70 0 71 0;
+#X connect 71 0 72 0;
+#X connect 72 0 35 3;
+#X connect 73 0 74 0;
+#X connect 74 0 75 0;
+#X connect 75 0 35 4;
+#X connect 76 0 77 0;
+#X connect 77 0 78 0;
+#X connect 78 0 35 5;
+#X connect 79 0 80 0;
+#X connect 80 0 82 0;
+#X connect 81 0 35 6;
+#X connect 82 0 81 0;
+#X connect 83 0 84 0;
+#X connect 84 0 85 0;
+#X connect 85 0 36 0;
+#X connect 86 0 87 0;
+#X connect 87 0 88 0;
+#X connect 88 0 36 3;
+#X connect 89 0 90 0;
+#X connect 90 0 91 0;
+#X connect 91 0 36 4;
+#X connect 92 0 93 0;
+#X connect 93 0 94 0;
+#X connect 94 0 36 5;
+#X connect 95 0 96 0;
+#X connect 96 0 97 0;
+#X connect 97 0 36 6;
+#X connect 98 0 99 0;
+#X connect 99 0 103 0;
+#X connect 100 0 101 0;
+#X connect 101 0 102 0;
+#X connect 102 0 39 4;
+#X connect 103 0 39 3;
+#X connect 104 0 105 0;
+#X connect 105 0 106 0;
+#X connect 106 0 39 5;
+#X connect 107 0 108 0;
+#X connect 108 0 109 0;
+#X connect 109 0 39 6;
+#X connect 110 0 111 0;
+#X connect 111 0 112 0;
+#X connect 112 0 39 7;
+#X connect 113 0 114 0;
+#X connect 114 0 115 0;
+#X connect 115 0 39 8;
+#X connect 116 0 117 0;
+#X connect 117 0 121 0;
+#X connect 118 0 119 0;
+#X connect 119 0 120 0;
+#X connect 120 0 39 0;
+#X connect 121 0 39 9;
+#X connect 122 0 123 0;
+#X connect 123 0 134 0;
+#X connect 124 0 125 0;
+#X connect 125 0 135 0;
+#X connect 126 0 127 0;
+#X connect 127 0 136 0;
+#X connect 128 0 129 0;
+#X connect 129 0 137 0;
+#X connect 130 0 131 0;
+#X connect 131 0 138 0;
+#X connect 132 0 133 0;
+#X connect 133 0 141 0;
+#X connect 134 0 7 3;
+#X connect 135 0 7 4;
+#X connect 136 0 7 5;
+#X connect 137 0 7 6;
+#X connect 138 0 7 7;
+#X connect 139 0 140 0;
+#X connect 140 0 145 0;
+#X connect 141 0 7 8;
+#X connect 142 0 143 0;
+#X connect 143 0 144 0;
+#X connect 144 0 147 2;
+#X connect 145 0 7 0;
+#X connect 146 0 159 2;
+#X connect 146 1 159 3;
+#X connect 154 0 155 0;
+#X connect 155 0 156 0;
+#X connect 156 0 159 0;
+#X connect 157 0 159 0;
+#X connect 158 0 159 1;
+#X connect 159 0 17 1;
+#X connect 159 1 17 1;
+#X connect 159 1 17 2;
+#X connect 159 2 17 2;

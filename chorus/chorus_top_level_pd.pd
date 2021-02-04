@@ -1,0 +1,34 @@
+#N canvas -8 -8 1920 997 12;
+#X declare -path ../_utils;
+#X obj 239 126 hsl 128 15 0 1 0 1 empty dampingSlider depth -2 -8 0
+10 -143338 -1 -1 9700 1;
+#X obj 188 86 hsl 128 15 40 1000 0 1 empty /roomsizeSlider speed -2
+-8 0 10 -232126 -1 -1 2900 1;
+#X obj 290 160 hsl 128 15 0 1 0 1 empty panSlider pan -2 -8 0 10 -262113
+-1 -1 5800 1;
+#X obj 33 71 tgl 15 1 empty onOffToggle bypass 17 7 0 10 -262144 -1
+-1 0 1;
+#X obj 33 208 chorus_pedal, f 44;
+#X obj 358 198 hsl 240 30 0 1 0 1 empty gainSlider gain -2 -8 0 10
+-224695 -33289 -33289 12500 1;
+#X obj 354 323 hsl 240 30 0 1 0 1 empty gainSlider gain -2 -8 0 10
+-224695 -33289 -33289 23900 1;
+#X obj 95 25 tgl 30 0 empty onOffToggle patch_audio_on/off 40 7 0 10
+-262144 -1 -1 0 1;
+#X obj 508 48 loadbang;
+#X msg 508 82 \; pd dsp 1;
+#X obj 95 179 ezadc~;
+#X obj 30 305 ezdac~;
+#X obj 631 179 declare -path ../_utils;
+#X connect 0 0 4 4;
+#X connect 1 0 4 3;
+#X connect 2 0 4 5;
+#X connect 3 0 4 0;
+#X connect 4 0 11 0;
+#X connect 4 1 11 1;
+#X connect 5 0 4 6;
+#X connect 6 0 11 2;
+#X connect 7 0 10 0;
+#X connect 8 0 9 0;
+#X connect 10 0 4 1;
+#X connect 10 1 4 2;
