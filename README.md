@@ -1,5 +1,6 @@
 # MoMo
 A pedalboard-like GUI that allows a user’s mobile device to control a fully customizable Pure Data audio engine.
+
 By connecting an audio input via interface to the mobile device, the system can be used to control a guitar in a simple and intuitive way.
 
 ## CHANGES
@@ -7,6 +8,7 @@ MoMo v0.9.3 - Changed bandpass filters to bob~, which is an implementation of Mo
 
 ## INTRODUCTION
 This is a demo, packaged for the final project in MUST2431 (Ronald B. Smith) at Northeastern University. 
+
 Each folder contains the elements used in an effect.
 
 The naming conventions are:
